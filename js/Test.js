@@ -129,10 +129,36 @@ const assertGetString = () => {
 
 /** Function to test everything */
 const main = () => {
-  assertGetTag();
-  assertGetLink();
-  assertParseAll();
-  assertGetString();
+  let args = process.argv.slice(2);
+  if (args.length === 0) {
+    assertGetTag();
+    assertGetLink();
+    assertParseAll();
+    assertGetString();
+    return;
+  } else {
+    let run = args[0].split("=");
+    let action = run[1];
+    console.log(action);
+    switch (action) {
+      case "getTag":
+        assertGetTag();
+        break;
+      case "getLink":
+        assertGetLink();
+        break;
+      case "parseAll":
+        assertParseAll();
+        break;
+      case "getString":
+        assertGetString();
+        break;
+      default:
+        assertGetTag();
+        assertGetLink();
+        assertParseAll();
+        assertGetString();
+    }
+  }
 };
-
 main();
