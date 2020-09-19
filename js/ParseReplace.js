@@ -1,3 +1,6 @@
+var parseLink = require("./LinkParser");
+var removeTag = require("./HTMLRemover");
+
 /**
  * Filler for Assert True assertion test
  * @param actual Actual string
@@ -44,9 +47,7 @@ const getTag = (tag, str) => {
  * @var text the text parsed from getTag
  * @returns show(link, text)
  */
-const getLink = (str) => {
-  
-};
+const getLink = (str) => {};
 
 /**
  * Recursively parse and replace a tag with text from @see getLink function call
@@ -55,7 +56,6 @@ const getLink = (str) => {
  */
 const parseAll = (str) => {
   let regex = new RegExp("<s*a[^>]*>(.*?)<s*/s*a>");
-  
 };
 
 /**
@@ -63,9 +63,7 @@ const parseAll = (str) => {
  * @param str HTML Code to parse, strip, and return
  * @returns string without html code, where a tags are replaced with function calls
  */
-const getString = (str) => {
-  
-};
+const getString = (str) => {};
 
 const assertGetTag = () => {
   console.info("Testing getTag");
