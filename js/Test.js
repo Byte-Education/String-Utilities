@@ -24,6 +24,18 @@ const assertGetTag = () => {
     "Successfully pulled out text between a tag",
     "Failed to find text between text tags"
   );
+  assertTrue(
+    getTag("h1", "<h1>hello</h1>").match,
+    "<h1>hello</h1>",
+    "Successfully found h1 tag",
+    "Failed to find h1 tag"
+  );
+  assertTrue(
+    getTag("h1", "<h1>hello</h1>").text,
+    "hello",
+    "Successfully pulled text between h1 tag",
+    "Failed to pull text between h1 tag"
+  );
 };
 
 const assertGetLink = () => {
