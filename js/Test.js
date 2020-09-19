@@ -2,6 +2,8 @@ var assertTrue = require("./Assertions");
 var { getTag, getLink, parseAll, getString } = require("./ParseReplace");
 
 
+const FUNCTION_NAME = "show";
+
 const assertGetTag = () => {
   console.info("Testing getTag");
   assertTrue(
@@ -34,19 +36,19 @@ const assertGetLink = () => {
   );
   assertTrue(
     getLink('<a href="www.google.com">Google</a>'),
-    'show("www.google.com", "Google")',
+    `${FUNCTION_NAME}("www.google.com", "Google")`,
     "Successfully converted html to function call",
     "Failed to convert html to function call"
   );
   assertTrue(
     getLink('<div><a href="www.google.com">Google</a></div>'),
-    'show("www.google.com", "Google")',
+    `${FUNCTION_NAME}("www.google.com", "Google")`,
     "Successfully converted nested html to function call",
     "Failed to convert nested html to function call"
   );
   assertTrue(
     getLink('<div><h1>Hello</h1> <a href="www.google.com">Google</a></div>'),
-    'show("www.google.com", "Google")',
+    `${FUNCTION_NAME}("www.google.com", "Google")`,
     "Successfully converted html to only function call\nSuccessfully ignored other text",
     "Failed to ignore other text or convert html to only function call"
   );
@@ -70,7 +72,7 @@ const assertParseAll = () => {
     parseAll(
       '<h1>hello</h1> <a href="www.google.com">google</a> <a href="www.google.com">google</a>'
     ),
-    '<h1>hello</h1> show("www.google.com", "google") show("www.google.com", "google")',
+    `<h1>hello</h1> ${FUNCTION_NAME}("www.google.com", "google") ${FUNCTION_NAME}("www.google.com", "google")`,
     "Successfully parsed html and converted links to function calls",
     "Failed to parse html or convert links to function calls"
   );
@@ -92,7 +94,7 @@ const assertGetString = () => {
   );
   assertTrue(
     getString('<div><a href="www.google.com">google.com</a></div>'),
-    'show("www.google.com", "google.com")',
+    `${FUNCTION_NAME}("www.google.com", "google.com")`,
     "Successfully converted html to function call without other tags",
     "Failed to convert html to function calls or included other tags"
   );
@@ -100,7 +102,7 @@ const assertGetString = () => {
     '<div><h1>hello</h1> <a href="https://www.google.com">Google</a> <a href="www.google.com">Second link</a></div>';
   assertTrue(
     getString(longHTML),
-    'hello show("https://www.google.com", "Google") show("www.google.com", "Second link")',
+    `hello ${FUNCTION_NAME}("https://www.google.com", "Google") ${FUNCTION_NAME}("www.google.com", "Second link")`,
     "Successfully removed all html elements, maintaining text, and converting links to function calls",
     "Failed to remove all html elements, maintain text, or convert links to function calls"
   );
