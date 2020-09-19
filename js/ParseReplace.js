@@ -1,6 +1,6 @@
 var parseLink = require("./LinkParser");
 var removeTag = require("./HTMLRemover");
-var assertTrue = require("./Assertions");
+
 /**
  * Returns the matched line, the text between the html or null if nothing is found
  * @param tag HTML tag to look for
