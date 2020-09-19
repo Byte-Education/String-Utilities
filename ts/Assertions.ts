@@ -32,16 +32,18 @@ const assertTrue = (
 /**
  * return true if no exceptions are thrown, false if any exception is thrown
  * @param func function to assert
+ * @param success optional string to print at success
+ * @param failure optional string to print at failure
  * @returns true if no exceptions thrown, false otherwise
  */
-const assertTry = (func: Function): boolean => {
+const assertTry = (func: Function, success?: string, failure? : string): boolean => {
   try {
     func();
-    console.info("Successfully caught all exceptions!");
+    console.info(`Successfully caught all exceptions!${success !== undefined ? success + "\n" : ""}`);
     return true;
   } catch (e) {
     console.warn(
-      `Failed to catch exception [${e.name}]\nMessage: ${e.message}`
+      `Failed to catch exception [${e.name}]\n${failure !== undefined ? failure + "\n" : ""}Message: ${e.message}`
     );
     return false;
   }
@@ -70,6 +72,7 @@ const assertEquals = (first: any, second: any): boolean => {
   );
   return false;
 };
+
 
 
 export { assertTrue, assertTry, assertEquals };

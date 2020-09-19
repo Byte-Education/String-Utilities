@@ -1,4 +1,4 @@
-import { assertTrue } from "./Assertions";
+import { assertTrue, assertTry } from "./Assertions";
 import { getTag, getLink, parseAll, getString } from "./ParseReplace";
 
 const FUNCTION_NAME = "show";
@@ -76,6 +76,13 @@ const assertGetLink = () => {
  */
 const assertParseAll = () => {
   console.info("=====Testing parseAll=====");
+  assertTry(
+    () => {
+      parseAll("<div></div>");
+    },
+    "Base case found, no infinite recursion caused",
+    "Possible problem with recursion, see error name and error message"
+  );
   assertTrue(
     parseAll("<div></div>"),
     "<div></div>",
