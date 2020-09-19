@@ -27,6 +27,11 @@ const assertTrue = (
   return false;
 };
 
+/**
+ * return true if no exceptions are thrown, false if any exception is thrown
+ * @param func function to assert
+ * @returns true if no exceptions thrown, false otherwise
+ */
 const assertTry = (func: Function): boolean => {
   try {
     func();
@@ -40,6 +45,12 @@ const assertTry = (func: Function): boolean => {
   }
 };
 
+/**
+ * Compare both values, return true only if both values are the same in type and value, false otherwise
+ * @param first first value to compare
+ * @param second second value to compare
+ * @returns true if both are the same in value and type, false otherwise
+ */
 const assertEquals = (first: any, second: any): boolean => {
   if (typeof first === typeof second) {
     if (first === second) {
