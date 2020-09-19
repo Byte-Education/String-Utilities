@@ -20,7 +20,7 @@ const getTag = (tag, str) => {
  * @returns show(link, text)
  */
 const getLink = (str) => {
-  return null;
+  return str;
 };
 
 /**
@@ -30,7 +30,7 @@ const getLink = (str) => {
  */
 const parseAll = (str) => {
   let regex = new RegExp("<s*a[^>]*>(.*?)<s*/s*a>");
-  return null;
+  return str;
 };
 
 /**
@@ -39,7 +39,7 @@ const parseAll = (str) => {
  * @returns string without html code, where a tags are replaced with function calls
  */
 const getString = (str) => {
-  return null;
+  return str;
 };
 
 module.exports = {
