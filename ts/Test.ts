@@ -7,7 +7,7 @@ const FUNCTION_NAME = "show"
  * Test getTag
  */
 const assertGetTag = () => {
-  console.info("Testing getTag");
+  console.info("=====Testing getTag=====");
   assertTrue(
     getTag("a", "<div></div>"),
     null,
@@ -32,7 +32,7 @@ const assertGetTag = () => {
  * test getLink
  */
 const assertGetLink = () => {
-  console.info("Testing getLink");
+  console.info("=====Testing getLink=====");
   assertTrue(
     getLink("<div> </div>"),
     "<div> </div>",
@@ -63,7 +63,7 @@ const assertGetLink = () => {
  * test parseAll
  */
 const assertParseAll = () => {
-  console.info("Testing parseAll");
+  console.info("=====Testing parseAll=====");
   assertTrue(
     parseAll("<div></div>"),
     "<div></div>",
@@ -90,7 +90,7 @@ const assertParseAll = () => {
  * test getString
  */
 const assertGetString = () => {
-  console.info("Testing getString");
+  console.info("=====Testing getString=====");
   assertTrue(
     getString("<h1>Hello</h1>"),
     "Hello",

@@ -1,17 +1,17 @@
 var assertTrue = require("./Assertions");
 var { getTag, getLink, parseAll, getString } = require("./ParseReplace");
 
-
 const FUNCTION_NAME = "show";
 
 const assertGetTag = () => {
-  console.info("Testing getTag");
+  console.info("=====Testing getTag=====");
   assertTrue(
     getTag("a", "<div></div>"),
     null,
     "Successfully recognized no <a> tag in <div></div>",
     "Recognized non-existent tag"
   );
+
   assertTrue(
     getTag("a", '<a href="www.google.com">google.com</a>').match,
     '<a href="www.google.com">google.com</a>',
@@ -27,7 +27,7 @@ const assertGetTag = () => {
 };
 
 const assertGetLink = () => {
-  console.info("Testing getLink");
+  console.info("=====Testing getLink=====");
   assertTrue(
     getLink("<div> </div>"),
     "<div> </div>",
@@ -55,7 +55,7 @@ const assertGetLink = () => {
 };
 
 const assertParseAll = () => {
-  console.info("Testing parseAll");
+  console.info("=====Testing parseAll=====");
   assertTrue(
     parseAll("<div></div>"),
     "<div></div>",
@@ -79,7 +79,7 @@ const assertParseAll = () => {
 };
 
 const assertGetString = () => {
-  console.info("Testing getString");
+  console.info("=====Testing getString=====");
   assertTrue(
     getString("<h1>Hello</h1>"),
     "Hello",

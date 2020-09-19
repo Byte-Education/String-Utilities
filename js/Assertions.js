@@ -1,4 +1,3 @@
-
 /**
  * Filler for Assert True assertion test
  * @param actual Actual string
@@ -27,6 +26,4 @@ const assertTrue = (
   );
   return false;
 };
-
-
 module.exports = assertTrue;

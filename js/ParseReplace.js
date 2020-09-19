@@ -9,6 +9,7 @@ var removeTag = require("./HTMLRemover");
  */
 const getTag = (tag, str) => {
   let regex = new RegExp(`<s*${tag}[^>]*>(.*?)<s*/s*${tag}>`);
+  return { match: null, text: null };
 };
 /**
  * Replace single link
@@ -18,7 +19,9 @@ const getTag = (tag, str) => {
  * @var text the text parsed from getTag
  * @returns show(link, text)
  */
-const getLink = (str) => {};
+const getLink = (str) => {
+  return null;
+};
 
 /**
  * Recursively parse and replace a tag with text from @see getLink function call
@@ -27,6 +30,7 @@ const getLink = (str) => {};
  */
 const parseAll = (str) => {
   let regex = new RegExp("<s*a[^>]*>(.*?)<s*/s*a>");
+  return null;
 };
 
 /**
@@ -34,7 +38,9 @@ const parseAll = (str) => {
  * @param str HTML Code to parse, strip, and return
  * @returns string without html code, where a tags are replaced with function calls
  */
-const getString = (str) => {};
+const getString = (str) => {
+  return null;
+};
 
 module.exports = {
   getTag,
