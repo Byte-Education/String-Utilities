@@ -2,6 +2,8 @@
  * Filler for Assert True assertion test
  * @param actual Actual string
  * @param expected Expected string
+ * @param success optional string to print to the user with the successful run
+ * @param failure optional string to print to the user with the failed run
  * @returns true if actual matches expected, false if not. Will info out success, warn failure
  */
 const assertTrue = (

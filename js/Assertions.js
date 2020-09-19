@@ -2,6 +2,8 @@
  * Filler for Assert True assertion test
  * @param actual Actual string
  * @param expected Expected string
+ * @param success optional string to print to the user with the successful run
+ * @param failure optional string to print to the user with the failed run
  * @returns true if actual matches expected, false if not. Will info out success, warn failure
  */
 const assertTrue = (
@@ -27,26 +29,23 @@ const assertTrue = (
   return false;
 };
 
-
-
 /**
  * return true if no exceptions are thrown, false if any exception is thrown
  * @param func function to assert
  * @returns true if no exceptions thrown, false otherwise
  */
 const assertTry = (func) => {
-  try{
+  try {
     func();
-    console.info("Successfully caught all exceptions!")
+    console.info("Successfully caught all exceptions!");
     return true;
-  }
-  catch(e){
-    console.warn(`Failed to catch exception [${e.name}]\nMessage: ${e.message}`)
+  } catch (e) {
+    console.warn(
+      `Failed to catch exception [${e.name}]\nMessage: ${e.message}`
+    );
     return false;
   }
-}
-
-
+};
 
 /**
  * Compare both values, return true only if both values are the same in type and value, false otherwise
@@ -72,7 +71,4 @@ const assertEquals = (first, second) => {
   return false;
 };
 
-
-
-
-module.exports = { assertTrue, assertTry, assertEquals } ;
+module.exports = { assertTrue, assertTry, assertEquals };
