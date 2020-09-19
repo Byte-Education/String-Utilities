@@ -39,7 +39,7 @@ const assertTrue = (
 const assertTry = (func: Function, success?: string, failure? : string): boolean => {
   try {
     func();
-    console.info(`Successfully caught all exceptions!${success !== undefined ? success + "\n" : ""}`);
+    console.info(`Successfully caught all exceptions!\n${success !== undefined ? success + "\n" : ""}`);
     return true;
   } catch (e) {
     console.warn(

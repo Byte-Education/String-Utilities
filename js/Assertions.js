@@ -40,7 +40,7 @@ const assertTry = (func, success = undefined, failure = undefined) => {
   try {
     func();
     console.info(
-      `Successfully caught all exceptions!${
+      `Successfully caught all exceptions!\n${
         success !== undefined ? success + "\n" : ""
       }`
     );
