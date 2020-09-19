@@ -28,4 +28,17 @@ const assertTrue = (
   return false;
 };
 
-export { assertTrue };
+const assertTry = (func : Function) : boolean => {
+  try{
+    func();
+    console.info("Successfully caught all exceptions!")
+    return true;
+  }
+  catch(e){
+    console.warn(`Failed to catch exception [${e.name}]\nMessage: ${e.message}`)
+    return false;
+  }
+}
+
+
+export { assertTrue, assertTry };

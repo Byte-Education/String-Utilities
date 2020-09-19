@@ -26,4 +26,20 @@ const assertTrue = (
   );
   return false;
 };
-module.exports = { assertTrue } ;
+
+
+
+const assertTry = (func) => {
+  try{
+    func();
+    console.info("Successfully caught all exceptions!")
+    return true;
+  }
+  catch(e){
+    console.warn(`Failed to catch exception [${e.name}]\nMessage: ${e.message}`)
+    return false;
+  }
+}
+
+
+module.exports = { assertTrue, assertTry } ;
