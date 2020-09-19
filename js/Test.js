@@ -139,7 +139,6 @@ const main = () => {
   } else {
     let run = args[0].split("=");
     let action = run[1];
-    console.log(action);
     switch (action) {
       case "getTag":
         assertGetTag();
@@ -154,6 +153,7 @@ const main = () => {
         assertGetString();
         break;
       default:
+        console.info("Invalid input, running all test cases");
         assertGetTag();
         assertGetLink();
         assertParseAll();
