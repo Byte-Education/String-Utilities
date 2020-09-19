@@ -42,4 +42,26 @@ const assertTry = (func) => {
 }
 
 
-module.exports = { assertTrue, assertTry } ;
+
+const assertEquals = (first, second) => {
+  if (typeof first === typeof second) {
+    if (first === second) {
+      console.info(`${first} and ${second} are the same!`);
+      return true;
+    } else {
+      console.warn(
+        `${first} and ${second} are the same type, but have different values!`
+      );
+      return false;
+    }
+  }
+  console.warn(
+    `${first} and ${second} are different types, therefore cannot be the same`
+  );
+  return false;
+};
+
+
+
+
+module.exports = { assertTrue, assertTry, assertEquals } ;

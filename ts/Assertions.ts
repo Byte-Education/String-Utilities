@@ -1,4 +1,3 @@
-
 /**
  * Filler for Assert True assertion test
  * @param actual Actual string
@@ -28,17 +27,36 @@ const assertTrue = (
   return false;
 };
 
-const assertTry = (func : Function) : boolean => {
-  try{
+const assertTry = (func: Function): boolean => {
+  try {
     func();
-    console.info("Successfully caught all exceptions!")
+    console.info("Successfully caught all exceptions!");
     return true;
-  }
-  catch(e){
-    console.warn(`Failed to catch exception [${e.name}]\nMessage: ${e.message}`)
+  } catch (e) {
+    console.warn(
+      `Failed to catch exception [${e.name}]\nMessage: ${e.message}`
+    );
     return false;
   }
-}
+};
+
+const assertEquals = (first: any, second: any): boolean => {
+  if (typeof first === typeof second) {
+    if (first === second) {
+      console.info(`${first} and ${second} are the same!`);
+      return true;
+    } else {
+      console.warn(
+        `${first} and ${second} are the same type, but have different values!`
+      );
+      return false;
+    }
+  }
+  console.warn(
+    `${first} and ${second} are different types, therefore cannot be the same`
+  );
+  return false;
+};
 
 
-export { assertTrue, assertTry };
+export { assertTrue, assertTry, assertEquals };
