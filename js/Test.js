@@ -1,4 +1,4 @@
-var assertTrue = require("./Assertions");
+var { assertTrue } = require("./Assertions");
 var { getTag, getLink, parseAll, getString } = require("./ParseReplace");
 
 const FUNCTION_NAME = "show";

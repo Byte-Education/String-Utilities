@@ -26,4 +26,4 @@ const assertTrue = (
   );
   return false;
 };
-module.exports = assertTrue;
+module.exports = { assertTrue } ;
